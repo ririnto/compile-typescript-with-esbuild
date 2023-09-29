@@ -1,0 +1,18 @@
+{
+  "name": "compile-typescript-with-esbuild",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "scripts": {
+    "prepack": "npm run build",
+    "build": "npm run clean && npm run build:tsc && npm run build:js",
+    "build:tsc": " tsc --emitDeclarationOnly",
+    "build:js": "node ./esbuild.js",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@types/node": "^20.7.1",
+    "esbuild": "^0.19.4",
+    "typescript": "^5.2.2"
+  },
+  "type": "module"
+}
